@@ -1,0 +1,31 @@
+<div id="posts" class="main users-new">
+  <div class="wrapper">
+    <div class="form-heading">Join!</div>
+    <div class="form users-form">
+      <div class="form-body">
+
+      <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+
+      <%= form_tag("/login")do %>
+
+        <p>メールアドレス</p>
+        <input name="email" class="form-content" value="<%= @email %>">
+        <p>パスワード</p>
+        <input name="password" class="form-content" type="password" value="<%= @password %>">
+        <input type="submit" value="Login">
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+        <div class="wrapper">
+            <p><small>&copy; 2020 Miranda</small></p>
+        </div>
+    </footer>

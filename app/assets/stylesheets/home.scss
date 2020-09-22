@@ -1,0 +1,205 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.7;
+  color: #214785;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/*-----------------------header----------------------------*/
+header {
+  background: #214785;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.page-header a {
+  margin-left: 15px;
+  color: #91d0d7;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.main-nav {
+  display: flex;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  list-style: none;
+  margin-right: 15px;
+}
+
+.main-nav li {
+  margin-left: 5px;
+}
+
+.main-nav a {
+  color: #91d0d7;
+}
+
+.main-nav a:hover {
+  color: #f0ada7;
+}
+
+/*-----------------------top-------------------------*/
+.big-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#top {
+  background-image: url("/top.image.png");
+  background-color: rgba(153, 153, 153, 0.5);
+  background-blend-mode: hard-light;
+  min-height: 100vh;
+}
+
+.top-index {
+  text-align: center;
+}
+.top-post {
+  padding-top: 50px;
+  padding-bottom: 700px;
+}
+.top-post h1 {
+  font-size: 2.5rem;
+}
+.down-post {
+  padding-bottom: 50px;
+}
+.down-post h1 {
+  font-size: 2.5rem;
+}
+/*------------------about---------------------------*/
+
+#about {
+  background-image: url("/about.image.jpg");
+  background-color: rgba(153, 153, 153, 0.8);
+  background-blend-mode: hard-light;
+  min-height: 100vh;
+}
+.about-head {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.about-index {
+  text-align: center;
+}
+.about1 {
+  font-size: 2rem;
+}
+.about2 {
+  font-size: 2rem;
+  padding-bottom: 10%;
+}
+.about-index p {
+  font-size: 1.125rem;
+}
+.share {
+  padding: 15px 0;
+}
+.about-center {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5% 0;
+}
+.about-center img {
+  padding-bottom: 5%;
+  width: 30%;
+  opacity: 0.8;
+}
+.about-center img:hover {
+  opacity: 1;
+}
+
+/*------------------footer---------------------------*/
+footer {
+  background: #214785;
+  text-align: center;
+  padding: 26px 0;
+  margin: 0;
+}
+
+footer p {
+  color: #91d0d7;
+  font-size: 0.875rem;
+}
+/*# sourceMappingURL=style.css.map */
+/*------------------スマホ版---------------------------*/
+@media (max-width: 700px) {
+  .page-header {
+    font-size: 0.5rem;
+  }
+  .main-nav li {
+    font-size: 0.85rem;
+  }
+  .top-post h1 {
+    font-size: 1.85rem;
+  }
+  .down-post h1 {
+    font-size: 1.85rem;
+  }
+  #top {
+    background-image: url("/top.image2.png");
+  }
+  .about1 {
+    font-size: 1.25rem;
+  }
+  .about2 {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 500px) {
+  .page-header {
+    font-size: 0.5rem;
+  }
+  .main-nav li {
+    font-size: 0.6rem;
+  }
+  .top-post h1 {
+    font-size: 1.5rem;
+  }
+  .down-post h1 {
+    font-size: 1.5rem;
+  }
+  .main-nav {
+    margin-right: 10px;
+  }
+  .page-header a {
+    margin-left: 5px;
+  }
+  .about1 {
+    font-size: 0.85rem;
+  }
+  .about2 {
+    font-size: 0.85rem;
+  }
+}

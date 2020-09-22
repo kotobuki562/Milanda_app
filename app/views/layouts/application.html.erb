@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MilandaApp</title>
+    <meta name="discription" content="Miranda" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Philosopher"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="/Milanda-logo.jpeg" taype="image/jpeg" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      rel="stylesheet"
+    />
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+        <div class="page-header wrapper">
+        <% if @current_user %>
+            <h1><%= link_to("Milanda","/posts") %></h1>
+            <% else %>
+            <h1><%= link_to("Milanda","/") %></h1>
+            <% end %>
+            <nav>
+                <ul class="main-nav">
+                
+                <% if @current_user %>
+                    <li><%= link_to("#{@current_user.name} さん","/users/#{@current_user.id}") %></li>
+                    <li><%= link_to("Post","/posts") %></li>
+                    
+                    <li><%= link_to("Users", "/users/index") %></li>
+                    <li><%= link_to("NewPost","/posts/new") %></li>
+                    <li><%= link_to("Logout","/logout",{method: :post}) %></li>
+                    
+                    <% else %>
+                    <li><%= link_to("About","/about") %></li>
+                    <li><%= link_to("Login","/login") %></li>
+                    <li><%= link_to("Signup","/signup") %></li>
+                <% end %>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

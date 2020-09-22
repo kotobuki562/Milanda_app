@@ -1,0 +1,31 @@
+
+<div id="posts" class="main posts-show">
+  <div class="wrapper show">
+    <div class="posts-show-item">
+    <div class="post-user-name">
+        <!-- ユーザーの画像が表示されるように、以下のsrcの中を埋めてください -->
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+        
+        <!-- link_toメソッドを用いて、ユーザー詳細ページへのリンクを作成してください -->
+        <%= link_to(@user.name,"/users/#{@user.id}") %>
+      </div>
+      <p>
+      <%= @post.content %>
+      </p>
+      <div class="post-time">
+        <%= @post.created_at %>
+      </div>
+      <% if @post.user_id == @current_user.id %>
+      <div class="post-menus">
+        <%= link_to("Edit", "/posts/#{@post.id}/edit") %>
+        <%= link_to("Destroy","/posts/#{@post.id}/destroy",{method: "post"}) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<footer>
+        <div class="wrapper">
+            <p><small>&copy; 2020 Miranda</small></p>
+        </div>
+    </footer>

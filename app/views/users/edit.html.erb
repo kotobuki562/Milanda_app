@@ -1,0 +1,32 @@
+<div id="posts" class="main users-edit">
+  <div class="wrapper">
+    <div class="form-heading">User Edit</div>
+    <div class="form users-form">
+      <div class="form-body">
+      
+      <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+
+      <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do%>
+        <p>ユーザー名</p>
+        <input name="name" class="form-content" value="<%= @user.name %>">
+        <p>アイコン</p>
+        <input class="form-content" name="image" type="file">
+        
+        <p>メールアドレス</p>
+        
+        <input name="email" class="form-content" value="<%= @user.email %>" >
+        <input type="submit" value="Save">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+        <div class="wrapper">
+            <p><small>&copy; 2020 Miranda</small></p>
+        </div>
+    </footer>

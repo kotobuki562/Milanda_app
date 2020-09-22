@@ -1,0 +1,25 @@
+<div id="posts" class="main posts-new">
+  <div class="wrapper">
+    <h1 class="form-heading">Let's Post!</h1>
+
+    <%= form_tag("/posts/create") do %>
+    <div class="form">
+      <div class="form-body">
+      <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+        <textarea name="content"></textarea>
+        <input type="submit" value="Post">
+      </div>
+    </div>
+    <% end %>
+  </div>
+  
+</div>
+    <footer>
+        <div class="wrapper">
+            <p><small>&copy; 2020 Miranda</small></p>
+        </div>
+    </footer>
